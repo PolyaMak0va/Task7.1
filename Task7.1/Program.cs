@@ -15,18 +15,18 @@ namespace Task7._1
         {
             #region Инициализация переменных
             Console.WriteLine("Введите длины сторон 1-го треугольника: ");
-            int a = Convert.ToInt32(Console.ReadLine());
-            int b = Convert.ToInt32(Console.ReadLine());
-            int c = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите длины сторон 2-го треугольника: ");
             int a1 = Convert.ToInt32(Console.ReadLine());
             int b1 = Convert.ToInt32(Console.ReadLine());
             int c1 = Convert.ToInt32(Console.ReadLine());
-            double S1, P1, p1, S2, P2, p2;
-            GetParam(a, b, c, out S1, out P1, out p1);
-            GetParam1(a1, b1, c1, out S2, out P2, out p2);
+            Console.WriteLine("Введите длины сторон 2-го треугольника: ");
+            int a2 = Convert.ToInt32(Console.ReadLine());
+            int b2 = Convert.ToInt32(Console.ReadLine());
+            int c2 = Convert.ToInt32(Console.ReadLine());
+            double S1 = GetParam(a1, b1, c1); // запрос у метода вычисления площади для треугольника 1
+            double S2 = GetParam(a2, b2, c2); // запрос у метода вычисления площади для треугольника 2
+
             #endregion
-            if (S1>S2)
+            if (S1 > S2) // сравнение площадей двух треугольников
             {
                 Console.WriteLine("Площадь первого треугольника больше, чем площадь второго треугольника");
             }
@@ -36,21 +36,16 @@ namespace Task7._1
             }
             Console.ReadKey();
         }
-        static void GetParam(int a, int b, int c, out double P1, out double p1, out double S1)
+        static double GetParam(int a, int b, int c) // метод, кот-й общий для любого запрашиваемого треугольника
         {
-            P1 = a + b + c;
-            p1 = P1 / 2;
-            S1 = Math.Sqrt(p1 * (p1 - a) * (p1 - b) * (p1 - c));
-            Console.WriteLine("Площадь первого прямоугольника равна: {0:f2}", S1);
-            Console.WriteLine();
-        }
-        static void GetParam1(int a1, int b1, int c1, out double P2, out double p2, out double S2)
-        {
-            P2 = a1 + b1 + c1;
-            p2 = P2 / 2;
-            S2 = Math.Sqrt(p2 * (p2 - a1) * (p2 - b1) * (p2 - c1));
-            Console.WriteLine("Площадь второго прямоугольника равна: {0:f2}", S2);
-            Console.WriteLine();
+            double result = 0;
+            double P = 0;
+            double p = 0;
+            double S = 0;
+            P = a + b + c;
+            p = P / 2;
+            S = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            return result;
         }
     }
 }
