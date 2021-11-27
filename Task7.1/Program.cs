@@ -22,10 +22,9 @@ namespace Task7._1
             int a2 = Convert.ToInt32(Console.ReadLine());
             int b2 = Convert.ToInt32(Console.ReadLine());
             int c2 = Convert.ToInt32(Console.ReadLine());
+
             double S1 = GetParam(a1, b1, c1); // запрос у метода вычисления площади для треугольника 1
             double S2 = GetParam(a2, b2, c2); // запрос у метода вычисления площади для треугольника 2
-
-            #endregion
             if (S1 > S2) // сравнение площадей двух треугольников
             {
                 Console.WriteLine("Площадь первого треугольника больше, чем площадь второго треугольника");
@@ -34,17 +33,14 @@ namespace Task7._1
             {
                 Console.WriteLine("Площадь второго треугольника больше, чем площадь первого треугольника");
             }
+            #endregion
             Console.ReadKey();
         }
-        static double GetParam(int a, int b, int c) // метод, кот-й общий для любого запрашиваемого треугольника
+        static double GetParam(int a, int b, int c)
         {
             double result = 0;
-            double P = 0;
-            double p = 0;
-            double S = 0;
-            P = a + b + c;
-            p = P / 2;
-            S = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            double p = (a + b + c) / 2;
+            double S = Math.Sqrt(p * (p - a) * (p - b) * (p - c));  
             return result;
         }
     }
