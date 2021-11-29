@@ -26,14 +26,10 @@ namespace Task7._1
 
             double S1 = GetParam(a1, b1, c1); // запрос у метода вычисления площади для треугольника 1
             double S2 = GetParam(a2, b2, c2); // запрос у метода вычисления площади для треугольника 2
-
-            try
-            {
             if (S1 == S2)
             {
                 Console.WriteLine("Площади первого и второго треугольника равны");
             }
-
             else
             {
                 if (S1 < S2)
@@ -45,12 +41,6 @@ namespace Task7._1
                     Console.WriteLine("Площадь первого треугольника больше, чем площадь второго треугольника");
                 }
             }
-            }
-            catch (FormatException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
             Console.ReadKey();
         }
 
